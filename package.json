@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mo2men-5aled/system_design/issues"
   },
-  "homepage": "https://github.com/mo2men-5aled/system_design#readme"
+  "homepage": "https://github.com/mo2men-5aled/system_design#readme",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.0"
+  }
 }

@@ -29,10 +29,6 @@ const publishMessage = async (routingKey, message) => {
     routingKey,
     Buffer.from(JSON.stringify(logDetails))
   );
-
-  console.log(
-    `The message ${message} was sent to the exchange ${exchangeName}`
-  );
 };
 
 module.exports = publishMessage;

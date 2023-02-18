@@ -1,4 +1,3 @@
-const express = require("express");
 const axios = require("axios");
 
 const login = async (req, res) => {
@@ -15,7 +14,7 @@ const login = async (req, res) => {
     };
 
     const response = await axios.post(
-      "http://localhost:5001/login",
+      `${process.env.HOSTNAME}/login`,
       basic_auth
     );
 

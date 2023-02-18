@@ -1,6 +1,6 @@
 module.exports = {
   rabbitMQ: {
-    url: "amqp://localhost",
-    exchangeName: "logExchange",
+    url: process.env.RABBITMQ_URL,
+    exchangeName: process.env.RABBITMQ_EXCHANGE_NAME,
   },
 };

@@ -1,6 +1,6 @@
-# Rabbit MQ
+# Rabbit MQ 🐰
 
-## What is Rabbit MQ?
+## What is Rabbit MQ? 🤔
 
 > It is a messsge broker software that implements the Advanced Message Queuing Protocol (AMQP)
 
@@ -76,3 +76,5 @@
 >
 >   - "\*" : matches exactly one word
 >   - "#" : matches zero or more words
+
+# Using Rabbit MQ with this project

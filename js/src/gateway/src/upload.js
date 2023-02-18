@@ -4,6 +4,7 @@ const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage").GridFsStorage;
 const Grid = require("gridfs-stream");
 
+const publishMessage = require("./rabbitmq/producer");
 //Middleware
 
 const mongoURI =
@@ -46,10 +47,20 @@ const up = multer({ storage });
 const upload = async (req, res) => {
   if (req.user.admin) {
     up.single("file")(req, res, (err) => {
+      const message = {
+        video_id: req.file.id,
+        mp3_id: undefined,
+        username: req.user.username,
+      };
       if (err) {
         res.json({ msg: "Error uploading file" });
       } else {
-        res.json({ msg: "File uploaded successfully" });
+        publishMessage("video", message);
+        res.json({
+          msg: "File uploaded successfully",
+          file: req.file,
+          message,
+        });
       }
     });
   } else {

@@ -11,7 +11,7 @@ const token = async (req, res, next) => {
     }
 
     const response = await axios.post(
-      "http://localhost:5001/validate",
+      `${process.env.HOSTNAME}/validate`,
       {},
       {
         headers: {
